@@ -35,7 +35,7 @@
                 <a href="/hunch">Hunch</a>
                 <a href="/blogs">Blogs</a>
                 <a href="#">About</a>
-                <a href="#">Login</a>
+                <a href="/login">Login</a>
             </div>
         </nav>
         <!--  <a href="#" class="button header__cta hide-for-mobile">Login</a>-->
@@ -46,7 +46,7 @@
             <a href="/hunch">Hunch</a>
             <a href="/blogs">Blogs</a>
             <a href="#">About</a>
-            <a href="#">Login</a>
+            <a href="/login">Login</a>
         </div>
     </header>
 
