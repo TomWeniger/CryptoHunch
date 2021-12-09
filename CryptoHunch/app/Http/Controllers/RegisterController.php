@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CustomUser;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -43,12 +44,11 @@ class RegisterController extends Controller
 
 
         if ($user->save()) {
-            return back()->with('success', 'Saved in the DB');
+            return redirect('home')->with('success', 'Saved in the DB');
         } else {
             return back()->with('error', 'Something wrong with the DB');
         }
-        auth()->attempt($request->only('email', 'password'));
 
-        return redirect()->route('home');
+        auth()->attempt($request->only('email', 'password'));
     }
 }

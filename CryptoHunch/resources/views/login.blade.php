@@ -13,7 +13,11 @@
 <p style="color:red">{{ $message }}</p>
 @endif
 
+@if (Auth::check()) {
+return redirect()->route('login');
+}
 
+@endif
 <form method="post">
     <h1>Login</h1>
     @csrf
