@@ -4,15 +4,13 @@
 
 @section('content')
 
-@if ($message = Session::post('success'))
+@if ($message = Session::get('success'))
 <p style="color:green">{{ $message }}</p>
 @endif
 
 @if ($message = Session::get('error'))
 <p style="color:red">{{ $message }}</p>
 @endif
-
-
 
     <form method="post">
         <h1>Login</h1>

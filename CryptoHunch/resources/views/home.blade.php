@@ -6,23 +6,7 @@
 
     <section class="hero">
         <div class="container">
-            <div class="hero__image spacebody">
-                <div class="shapes">
-                    <div class="rocket-holder">
-                        <img src="./images/bitcoinrocket.png" class="rocket" />
-                    </div>
 
-                    <div class="shape1 shape0"></div>
-                    <div class="shape2 shape0"></div>
-                    <div class="shape3 shape0"></div>
-                    <div class="shape4 shape0"></div>
-                    <div class="shape5 shape0"></div>
-
-                    <div class="final">
-                        <img src="https://i.postimg.cc/h4J6yzHs/planet10.png" class="planet10" />
-                    </div>
-                </div>
-            </div>
             <div class="hero__text container--pall">
                 <h1>Welcome to CryptoHunch!</h1>
                 <p>
