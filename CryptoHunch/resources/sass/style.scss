@@ -1,0 +1,16 @@
+// ensure variables are first and mixins are second on the import list
+
+@import "variables";
+
+// mixins are small templates for css
+
+@import "mixins";
+
+@import "animations";
+@import "cards";
+@import "globals";
+@import "header";
+@import "hero";
+@import "feature";
+@import "article";
+@import "footer";

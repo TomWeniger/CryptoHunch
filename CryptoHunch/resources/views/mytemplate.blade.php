@@ -35,6 +35,7 @@
                 <a href="/blogs">Blogs</a>
                 <a href="/about">About</a>
                 <a href="/login">Login</a>
+                <a href="/register">Register</a>
             </div>
         </nav>
         <!--  <a href="#" class="button header__cta hide-for-mobile">Login</a>-->
@@ -46,6 +47,7 @@
             <a href="/blogs">Blogs</a>
             <a href="/about">About</a>
             <a href="/login">Login</a>
+            <a href="/register">Register</a>
         </div>
     </header>
 

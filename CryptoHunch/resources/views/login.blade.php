@@ -13,7 +13,7 @@
 @endif
 
 
-<body>
+
     <form method="post">
         <h1>Login</h1>
         @csrf
@@ -31,6 +31,7 @@
         @enderror
         <input type="submit" name="submit" value="Register">
     </form>
-</body>
 
-</html>
+
+
+@endsection
