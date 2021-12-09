@@ -26,9 +26,9 @@ class RegisterController extends Controller
 
         $request->validate([
 
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required',
+            'first_name' => 'required|string|max:50',
+            'last_name' => 'required|string|max:50',
+            'email' => 'required|email',
             'password' => 'required',
             'tip_count' => 'required'
         ]);
@@ -41,14 +41,14 @@ class RegisterController extends Controller
         $user->password = $request->password;
         $user->tip_count = $request->tip_count;
 
+
+        if ($user->save()) {
+            return back()->with('success', 'Saved in the DB');
+        } else {
+            return back()->with('error', 'Something wrong with the DB');
+        }
         auth()->attempt($request->only('email', 'password'));
 
-
-
-
-        if ($user->save())
-            return back()->with('success', 'Saved in the DB');
-        else
-            return back()->with('error', 'Something wrong with the DB');
+        return redirect()->route('home');
     }
 }
