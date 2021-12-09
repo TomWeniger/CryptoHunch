@@ -35,6 +35,7 @@
                 <a href="/hunch">Hunch</a>
                 <a href="/blogs">Blogs</a>
                 <a href="#">About</a>
+                <a href="/register">Register</a>
                 <a href="/login">Login</a>
             </div>
         </nav>
@@ -46,6 +47,7 @@
             <a href="/hunch">Hunch</a>
             <a href="/blogs">Blogs</a>
             <a href="#">About</a>
+            <a href="/register">Register</a>
             <a href="/login">Login</a>
         </div>
     </header>

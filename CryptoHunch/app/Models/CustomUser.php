@@ -16,4 +16,12 @@ class CustomUser extends Model
     {
         $this->attributes['password'] = Hash::make($password);
     }
+
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'tip_count',
+    ];
 }

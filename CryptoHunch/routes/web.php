@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +19,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 Route::get('/coins', function () {
@@ -47,6 +46,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
 
-Route::post('/login', [UserController::class, 'store']);
+Route::get('/register', [RegisterController::class, 'register'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
