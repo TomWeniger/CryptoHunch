@@ -4,19 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CustomUser;
-use App\Models\User;
 
-class UserController extends Controller
+class RegisterController extends Controller
 {
-    public function login()
+    public function __construct()
     {
+        $this->middleware(['guest']);
+    }
 
-        return view('login');
+
+    public function register()
+    {
+        return view('register');
     }
 
     public function store(Request $request)
     {
-
         // Validations
 
         $request->validate([
@@ -28,7 +31,7 @@ class UserController extends Controller
             'tip_count' => 'required'
         ]);
 
-        $user = new User;
+        $user = new CustomUser;
 
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
@@ -36,17 +39,14 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->tip_count = $request->tip_count;
 
+        auth()->attempt($request->only('email', 'password'));
 
+        return redirect()->route('home');
 
 
         if ($user->save())
             return back()->with('success', 'Saved in the DB');
         else
             return back()->with('error', 'Something wrong with the DB');
-    }
-
-    public function register()
-    {
-        return view('register');
     }
 }
