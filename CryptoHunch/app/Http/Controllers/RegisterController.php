@@ -7,6 +7,8 @@ use App\Models\CustomUser;
 
 class RegisterController extends Controller
 {
+
+
     public function __construct()
     {
         $this->middleware(['guest']);
@@ -41,7 +43,7 @@ class RegisterController extends Controller
 
         auth()->attempt($request->only('email', 'password'));
 
-        return redirect()->route('home');
+
 
 
         if ($user->save())
