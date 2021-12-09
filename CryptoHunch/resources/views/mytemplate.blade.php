@@ -18,14 +18,21 @@
 
         <nav class="container container--pall flex flex-jc-sb flex-ai-c">
             <a href="/" class="header__logo">
-                <img src="./images/logo.svg" alt="CryptoHunch" />
+                <img src="" alt="CryptoHunch" />
             </a>
 
             <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span> </span>
+                <span> </span>
+                <span> </span>
             </a>
+
+<?php 
+if (Auth::check())
+{
+   echo "test";
+}
+?>
 
             <div class="header__links hide-for-mobile">
                 <a href="/home">Home</a>
@@ -58,7 +65,7 @@
     <footer class="footer">
         <div class="container">
             <a class="footer__logo" href="#">
-                <img src="./images/logo.svg" />
+                <img src="" />
             </a>
 
             <div class="footer__social">
@@ -94,11 +101,7 @@
                 </a>
             </div>
 
-            <div class="footer__links col2">
-                <a href="#">Support</a>
-                <a href="#">Support</a>
-                <a href="#">Support</a>
-            </div>
+ 
 
             <div class="footer__cta">
                 <a href="#" class="button">Request Invite</a>
@@ -110,7 +113,8 @@
         </div>
     </footer>
 
-    <script src="./app/js/script.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html
+
