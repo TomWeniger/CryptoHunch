@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class CustomUser extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 
     protected $table = "users";
 

@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CustomUser;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
+
+
     public function __construct()
     {
         $this->middleware(['guest']);
@@ -24,9 +27,9 @@ class RegisterController extends Controller
 
         $request->validate([
 
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required',
+            'first_name' => 'required|string|max:50',
+            'last_name' => 'required|string|max:50',
+            'email' => 'required|email',
             'password' => 'required',
             'tip_count' => 'required'
         ]);
@@ -39,14 +42,13 @@ class RegisterController extends Controller
         $user->password = $request->password;
         $user->tip_count = $request->tip_count;
 
-        auth()->attempt($request->only('email', 'password'));
 
-        return redirect()->route('home');
-
-
-        if ($user->save())
-            return back()->with('success', 'Saved in the DB');
-        else
+        if ($user->save()) {
+            return redirect('home')->with('success', 'Saved in the DB');
+        } else {
             return back()->with('error', 'Something wrong with the DB');
+        }
+
+        auth()->attempt($request->only('email', 'password'));
     }
 }
