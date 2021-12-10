@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\MailerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,3 +53,12 @@ Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
+
+
+Route::get("email", [MailerController::class, "email"])->name("email");
+
+Route::post("send-email", [MailerController::class, "composeEmail"])->name("send-email");
+
+
+//Test
+Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
