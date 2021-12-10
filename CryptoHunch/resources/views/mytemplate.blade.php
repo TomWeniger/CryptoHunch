@@ -18,7 +18,8 @@
 
         <nav class="container container--pall flex flex-jc-sb flex-ai-c">
             <a href="/" class="header__logo">
-                <img src="" alt="CryptoHunch" />
+
+                <img src="/images/logo.png" alt="CryptoHunch" />
             </a>
 
             <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
@@ -65,7 +66,7 @@ if (Auth::check())
     <footer class="footer">
         <div class="container">
             <a class="footer__logo" href="#">
-                <img src="" />
+                <img src="/images/logo.png" />
             </a>
 
             <div class="footer__social">
