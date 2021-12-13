@@ -15,16 +15,35 @@ $date
 
 class BlogModel extends Model
 {
+
     use HasFactory;
-
-    protected $fillable = [
-        'blog_post',
-        'coin_id',
-        'date',
-        'user_id',
-    ];
-
 
     public $timestamps = false;
 
+    protected $table = "blogs";
+
+
+    protected $fillable = [
+        'author_id',
+        'blog',
+        'coin_id'
+
+    ];
+
+
+
+
+    public function likedBy(User $user)
+    {
+        return $this->likes->contains('user_id', $user->id);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 }
