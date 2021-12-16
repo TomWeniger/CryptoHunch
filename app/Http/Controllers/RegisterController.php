@@ -30,7 +30,7 @@ class RegisterController extends Controller
 
             'first_name' => 'required|string|max:50',
             'last_name' => 'required|string|max:50',
-            'email' => 'required|email',
+            'email' => 'required|email|max:255|unique:users',
             'password' => 'required',
 
         ]);
@@ -45,6 +45,9 @@ class RegisterController extends Controller
         $user->password = $request->password;
 
 
+        $user->save();
+
+        //Authentication
 
         if ($user->save()) {
             auth()->attempt($request->only('email', 'password'));

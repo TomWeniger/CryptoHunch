@@ -24,11 +24,10 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if (!Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
-            return redirect()->intended('dashboard');
+            return redirect('home')->with('success', 'You are logged in');
         }
-        return "hello";
+        return back()->with('error', 'Invalid Login information');
     }
 }
